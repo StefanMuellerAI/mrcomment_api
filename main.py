@@ -35,7 +35,7 @@ except Exception as e:
 if not SYSTEM_PROMPT:
     raise ValueError("Die Datei 'linkedin_hook_system_prompt.md' ist leer.")
 
-API_KEY_NAME = "access_token"
+API_KEY_NAME = "X-API-Key"
 api_key_header = APIKeyHeader(name=API_KEY_NAME, auto_error=False)
 
 # Initialize OpenAI client (liest OPENAI_API_KEY aus Umgebungsvariablen)
