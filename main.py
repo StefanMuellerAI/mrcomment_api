@@ -61,8 +61,8 @@ app = FastAPI(
 
 # --- CORS Middleware ---
 # Definiere die erlaubten Ursprünge (Origins) mittels Regex
-# Erlaubt http://localhost (mit optionalem Port) und alle Subdomains von stefanai.de (http/https)
-origin_regex = r"^https?:\/\/(.*\.)?stefanai\.de$|^http:\/\/localhost(:[0-9]+)?$"
+# Erlaubt http://localhost (mit optionalem Port), alle Subdomains von stefanai.de (http/https) und ALLE Vercel-Domains
+origin_regex = r"^https?:\/\/(.*\.)?stefanai\.de$|^http:\/\/localhost(:[0-9]+)?$|^https:\/\/.*\.vercel\.app$"
 
 app.add_middleware(
     CORSMiddleware,

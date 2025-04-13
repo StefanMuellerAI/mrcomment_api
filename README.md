@@ -47,21 +47,23 @@ Eine einfache FastAPI-Anwendung zur Generierung von LinkedIn Hook-Ideen mithilfe
 
 ## Ausführung
 
-Starten Sie die API mit Uvicorn:
+Starten Sie die API lokal für die Entwicklung mit Uvicorn:
 
 ```bash
 python main.py
 ```
 
-Die API läuft standardmäßig unter `http://localhost:8000`. Dank `reload=True` startet der Server automatisch neu, wenn Sie Änderungen am Code speichern.
+Die API läuft dann lokal unter `http://localhost:8000`.
+
+Die **produktiv bereitgestellte API** ist unter `https://mrcomment-api.stefanai.de` erreichbar.
 
 ## API Endpunkte
 
-Die interaktive API-Dokumentation (Swagger UI), die ebenfalls detaillierte Informationen zu den Modellen und Endpunkten enthält, finden Sie unter `http://localhost:8000/docs`.
+Die interaktive API-Dokumentation (Swagger UI) für die produktive API finden Sie unter `https://mrcomment-api.stefanai.de/docs`.
 
 ### Health Check
 
-*   **URL:** `/health`
+*   **URL:** `/health` (Produktion: `https://mrcomment-api.stefanai.de/health`)
 *   **Methode:** `GET`
 *   **Beschreibung:** Überprüft den Status der API.
 *   **Antwort:**
@@ -73,7 +75,7 @@ Die interaktive API-Dokumentation (Swagger UI), die ebenfalls detaillierte Infor
 
 ### Generate Hook Ideas
 
-*   **URL:** `/generate-hook`
+*   **URL:** `/generate-hook` (Produktion: `https://mrcomment-api.stefanai.de/generate-hook`)
 *   **Methode:** `POST`
 *   **Beschreibung:** Generiert LinkedIn Hook-Ideen basierend auf der übergebenen `key_phrase`.
 *   **Authentifizierung:** Erfordert einen HTTP-Header namens `access_token` mit dem Wert des `API_KEY` aus der `.env`-Datei.
@@ -93,14 +95,15 @@ Die interaktive API-Dokumentation (Swagger UI), die ebenfalls detaillierte Infor
         ```
         *   `key_phrase` (string, erforderlich): Das Thema oder Stichwort, zu dem Hook-Ideen generiert werden sollen.
 
-*   **Beispiel mit `curl`:**
+*   **Beispiel mit `curl` (gegen die Produktions-API):**
 
     ```bash
-    curl -X POST "http://localhost:8000/generate-hook" \
+    curl -X POST "https://mrcomment-api.stefanai.de/generate-hook" \
     -H "Content-Type: application/json" \
-    -H "access_token: IHR_SICHERER_FASTAPI_API_SCHLÜSSEL" \
+    -H "access_token: IHR_PRODUKTIONS_API_SCHLÜSSEL" \
     -d '{"key_phrase": "Künstliche Intelligenz im Marketing"}'
     ```
+    *Hinweis: Ersetzen Sie `IHR_PRODUKTIONS_API_SCHLÜSSEL` mit dem tatsächlichen `API_KEY` aus der `.env`-Datei auf dem Server.*
 
 *   **Erfolgreiche Antwort (Status Code 200):**
     *   Die Antwort ist ein JSON-Objekt mit folgendem Aufbau:
@@ -150,4 +153,4 @@ Die interaktive API-Dokumentation (Swagger UI), die ebenfalls detaillierte Infor
 
 Die API erlaubt Anfragen von:
 *   `http://localhost` (mit beliebigen Ports)
-*   Allen Subdomains von `stefanai.de` (über `http` und `https`) 
+*   Allen Subdomains von `stefanai.de` (über `http` und `https`)
