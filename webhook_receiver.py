@@ -87,10 +87,13 @@ def webhook():
             return 'Unhandled event', 400
 
 if __name__ == '__main__':
-        if not WEBHOOK_SECRET:
-            print("FATAL ERROR: GITHUB_WEBHOOK_SECRET is not set. Webhook receiver cannot start securely.")
-             # Beenden oder unsicheren Modus vermeiden
-        exit(1)
-        print("Starting webhook receiver on port 9001...")
-         # Lausche auf allen Interfaces, Port 9001
-        app.run(host='0.0.0.0', port=9001, debug=False) # Debug=False für Produktion 
+    # Überprüfe, ob das Secret gesetzt ist
+    if not WEBHOOK_SECRET: # 4 Leerzeichen Einrückung
+        print("FATAL ERROR: GITHUB_WEBHOOK_SECRET is not set. Webhook receiver cannot start securely.") # 8 Leerzeichen Einrückung
+        # Beenden nur, wenn das Secret fehlt
+        exit(1) # 8 Leerzeichen Einrückung (innerhalb des if)
+
+    # Diese Zeilen werden nur ausgeführt, wenn das Secret vorhanden ist
+    print("Starting webhook receiver on port 9001...") # 4 Leerzeichen Einrückung
+    # Lausche auf allen Interfaces, Port 9001
+    app.run(host='0.0.0.0', port=9001, debug=False) # 4 Leerzeichen Einrückung 
