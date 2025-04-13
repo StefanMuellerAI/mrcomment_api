@@ -1,0 +1,18 @@
+# Umgebungsvariablen
+.env
+
+# Python Cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtuelle Umgebung
+venv/
+.venv/
+env/
+
+# IDE/Editor spezifische Dateien
+.vscode/
+.idea/
+*.swp
+*.swo 
