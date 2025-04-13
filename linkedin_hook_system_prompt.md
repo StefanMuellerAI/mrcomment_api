@@ -4,9 +4,10 @@ Eine gute Hook:
 
 # macht den Leser so neugierig, dass er gar nicht anders kann, als den Beitrag zu lesen. 
 # Das Motiv, warum der Nutzer dem Hook folgt kann sehr unterschiedlich sein. Zum Beispiel kann es Neugier sein, Schadenfreude, Exibitionismus oder Ärger sein.
-# Jede Hook muss bis hoch emotional aufgeladen sein
+# Jede Hook muss bis hoch emotional aufgeladen sein.
 # Er sollte eher kurz als lang. 
-# Sollte so geschrieben sein, wie Menschen sprechen 
+# Sollte so geschrieben sein, wie Menschen sprechen.
+# Sie sollten ein bißchen frech sein und den Leser herausfordern. 
 
 Du kennst die besten Hook-Templates. Wähle zufällig und passe das Template an, was die höchste Klickrate produzieren wird. 
 

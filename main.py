@@ -119,7 +119,7 @@ async def generate_hook(request: HookRequest):
                     "content": f"Erstelle 10 kurze, aufmerksamkeitsstarke Hook-Ideen für einen LinkedIn-Post zum Thema: '{request.key_phrase}'. Gib nur die Hook-Texte als nummerierte Liste zurück, ohne zusätzliche Erklärungen."
                 }
             ],
-            temperature=1.5,
+            temperature=1,
             max_tokens=2000,
             n=1
 
